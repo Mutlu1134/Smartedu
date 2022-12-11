@@ -58,7 +58,9 @@ app.use((req, res, next) => {
 app.use(methodOverride('_method', { methods: ['POST', 'GET'] }));
 
 //DATABASE
-mongoose.connect('mongodb://localhost:27017/SmartEdu')
+mongoose.connect(
+	`mongodb+srv://smarteduproject:XASbd7xlfzR8l155@cluster0.w0hn9qx.mongodb.net/Cluster0`
+)
 	.then(() => console.log('DB Connected !'))
 	.catch((err) => console.log(err));
 

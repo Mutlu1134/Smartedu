@@ -892,17 +892,14 @@ exports.updateCourse = async (req, res) => {
 ```
 
 # HOSTING VE UZAK DATABASE İLE SİTEYİ CANLIYA ALMA.
-1. Uzak database için mongodb atlas uygulaması üzerinden new cluster açıp connect via vscode seçip linki kopyalıyoruz. ve mongoose.connect'e yapıştırıyoruz. mongoose.connect bize promise dönüyor bunları .then ve .catch ile yakalıyoruz bağlandıysa Db connected yazdırıyoruz.
+1. Uzak database için mongodb atlas uygulaması üzerinden new cluster açıp connect via vscode seçip linki kopyalıyoruz. ve mongoose.connect'e yapıştırıyoruz. mongoose.connect bize promise dönüyor bunları .then ve .catch ile yakalıyoruz bağlandıysa Db connected yazdırıyoruz. mongose.connect'te backtick var dikkat.
 ```
+//DATABASE
 mongoose.connect(
-	'mongodb+srv://Mutlusprojects:992500@cluster0.nwclhox.mongodb.net/test'
+	`mongodb+srv://smarteduproject:XASbd7xlfzR8l155@cluster0.w0hn9qx.mongodb.net/Cluster0`
 )
-	.then(() => {
-		console.log('DB Connected !');
-	})
-	.catch((err) => {
-		console.log(err);
-	});
+	.then(() => console.log('DB Connected !'))
+	.catch((err) => console.log(err));
 ``` 
 2. Hosting hizmeti için heroku ücretli olduğundan render.com üzerinden uygulama açtık ve new static site'ı seçtik ve github'ı bağladık. Uygulamamızı github'a yükleyeceğiz.
 3. Hosting açmadan önce port numaramızı şu şekilde ayarlalamız gerekiyor. Böylece hosting sağlayıcı müsait olan port numarasını verebilecek veya 8000 'i verecek
