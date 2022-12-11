@@ -892,11 +892,11 @@ exports.updateCourse = async (req, res) => {
 ```
 
 # HOSTING VE UZAK DATABASE İLE SİTEYİ CANLIYA ALMA.
-1. Uzak database için mongodb atlas uygulaması üzerinden new cluster açıp connect via vscode seçip linki kopyalıyoruz. ve mongoose.connect'e yapıştırıyoruz. mongoose.connect bize promise dönüyor bunları .then ve .catch ile yakalıyoruz bağlandıysa Db connected yazdırıyoruz. mongose.connect'te backtick var dikkat.
+1. Uzak database için mongodb atlas uygulaması üzerinden new cluster açıp connect via vscode seçip linki kopyalıyoruz. ve mongoose.connect'e yapıştırıyoruz. mongoose.connect bize promise dönüyor bunları .then ve .catch ile yakalıyoruz bağlandıysa Db connected yazdırıyoruz. 
 ```
 //DATABASE
 mongoose.connect(
-	`mongodb+srv://smarteduproject:XASbd7xlfzR8l155@cluster0.w0hn9qx.mongodb.net/Cluster0`
+	'mongodb+srv://smarteduproject:XASbd7xlfzR8l155@cluster0.w0hn9qx.mongodb.net/Cluster0'
 )
 	.then(() => console.log('DB Connected !'))
 	.catch((err) => console.log(err));
@@ -908,6 +908,5 @@ mongoose.connect(
 `    "test": "echo \"Error: no test specified\" && exit 1",`
 bi altındaki start'ı daaşağıdaki şekilde güncelliyooruz. nodemon yerine node oluyor.
 `"start": "node app.js"`
-5. render.com'a deploy başarısız oluyor açılmıyor.
-`npm install`, `npm start` yazdım.
+5. render.com'a deploy'da `npm install`, `npm start` yazdım. başarılı.
 
