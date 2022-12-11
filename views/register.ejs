@@ -1,0 +1,81 @@
+<%- include("./partials/_header.ejs") -%> 
+
+<body class="host_version"> 
+
+    <!-- LOADER -->
+
+    <%- include("./partials/_loader.ejs") -%> 
+
+	<!-- END LOADER -->	
+	
+	<!-- Start header -->
+    <%- include("./partials/_navbar.ejs") -%> 
+	
+	<!-- End header -->
+	
+	        <div class="container">
+            <div class="section-title text-center">
+                <h3 class="mt-5">REGISTER</h3>
+
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12">
+                    <div class="contact_form">
+                        <div id="message"></div>
+                        <form class="" name="contactform" method="POST" action="/user/signup">
+                            <div class="row row-fluid">
+
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                      <!-- If name, pass, email validation error. write it via flashmessages  -->
+                                    <% if (flashMessages) { %>
+                                    <% if (flashMessages.success) { %>
+                                    <div class="alert alert-success">
+                                        <%= flashMessages.success %> 
+                                    </div>
+                                    <% } %>
+                                    <% if (flashMessages.fail) { %>
+                                    <div class="alert alert-danger">
+                                        <%= flashMessages.fail %> 
+                                    </div>
+                                    <% } %>
+
+                                <% } %>
+                                </div>
+							    <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <input type="text" name="userName" id="name" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <input type="email" name="userMail" id="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10 ">
+                                    <select name="role" class="form-control">
+                                        <option value="student">Student</option>
+                                        <option value="teacher">Teacher</option>
+                                    </select>
+                                </div>
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <input type="password" name="userPass" id="password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                                    <button type="submit" value="LOGIN" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">REGISTER</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+	 </div><!-- end container -->
+	
+     <%- include("./partials/_footer.ejs") -%> 
+
+ 
+	<script>
+		timeline(document.querySelectorAll('.timeline'), {
+			forceVerticalMode: 700,
+			mode: 'horizontal',
+			verticalStartPosition: 'left',
+			visibleItems: 4
+		});
+	</script>
+</body>
+</html>
